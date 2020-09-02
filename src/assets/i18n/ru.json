@@ -1,0 +1,13 @@
+{
+  "profile.username": "Пользователь",
+  "profile.email": "Email",
+  "profile.firstName": "Имя",
+  "profile.lastName": "Фамилия",
+  "profile.loading.get-profile": "Загрузка Профиля...",
+  "profile.loading.set-profile": "Сохранение Профиля...",
+  "error": {
+    "profile.not-found": "Профиль не найден",
+    "profile.email-generation": "Ошибка генерации e-mail",
+    "profile.invalid-name": "Невалидное имя"
+  }
+}

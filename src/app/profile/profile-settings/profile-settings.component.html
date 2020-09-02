@@ -1,0 +1,26 @@
+<ng-container [formGroup]="settings">
+  <div *ngIf="profile$ | async as profile">
+    <p>{{'profile.username' | translate}}: {{profile.userName}}</p>
+    <p>{{'profile.email' | translate}}: {{profile.email}}</p>
+  </div>
+  <div>
+    <label>
+      {{'profile.firstName' | translate}}:
+      <input type="text" formControlName="firstName">
+    </label>
+    <label>
+      {{'profile.lastName' | translate}}:
+      <input type="text" formControlName="lastName">
+    </label>
+    <input type="button" value="Save" [disabled]="settings.disabled" (click)="saveProfile()">
+  </div>
+  <div>
+    <p class="error" *ngIf="settings.hasError('api')">{{settings.getError('api') | translate}}</p>
+    <ng-container *ngIf="loading$ | async as loadingLabel">
+      <ng-container [ngTemplateOutlet]="loading" [ngTemplateOutletContext]="{$implicit: loadingLabel}"></ng-container>
+    </ng-container>
+  </div>
+</ng-container>
+<ng-template #loading let-label>
+  <p class="loader">{{label | translate}}</p>
+</ng-template>

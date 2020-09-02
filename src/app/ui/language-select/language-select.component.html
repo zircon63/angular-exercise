@@ -1,0 +1,3 @@
+<select [formControl]="language">
+  <option *ngFor="let language of langList$ | async" [value]="language.code">{{language.name}}</option>
+</select>
